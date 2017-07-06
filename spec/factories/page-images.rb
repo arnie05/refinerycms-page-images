@@ -10,4 +10,8 @@ FactoryGirl.define do
   factory :news_item_with_image, :parent => :news_item do
     after(:create) { |b| b.image_pages.create(image: FactoryGirl.create(:image)) }
   end if defined? Refinery::News::Item
+
+  factory :products_product_with_image, :parent => :products_product do
+    after(:create) { |b| b.image_pages.create(image: FactoryGirl.create(:image)) }
+  end if defined? Refinery::Products::Product
 end

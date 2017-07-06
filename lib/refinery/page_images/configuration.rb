@@ -18,6 +18,10 @@ module Refinery
       self.enable_for << { :model => 'Refinery::News::Item', :tab => 'Refinery::News::Tab' }
     end
 
+    if defined?(Refinery::Products)
+      self.enable_for << { :model => 'Refinery::Products::Product', :tab => 'Refinery::Products::Product' }
+    end
+
     config.instance_eval do
       def enabled_tabs
         extract_enabled_option(:tab)
